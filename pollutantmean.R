@@ -6,11 +6,11 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     #Set working directory
     setwd(directory)
     
-    #Determine how to call the file
+    #Determine how to call the files
     for (i in id) {
         if (i < 10) filename <- paste("00", i, ".csv", sep = "")
         if (10 <= i & i < 100) filename <- paste("0", i, ".csv", sep = "")
-        if (i > 100) filename <- paste(i, ".csv", sep = "")
+        if (i >= 100) filename <- paste(i, ".csv", sep = "")
     
         #Read the data and assign into datainfiles
         datainfiles <- read.csv(filename)
